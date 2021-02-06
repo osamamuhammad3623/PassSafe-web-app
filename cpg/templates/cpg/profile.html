@@ -1,0 +1,21 @@
+{% extends 'cpg/base.html' %}
+
+{% block content %}
+<section style="padding: 6em;" >
+  <div class="container">
+    <div class="col-lg-8 mx-auto ">
+      <form action="#" method="POST" data-aos="fade-up" data-aos-delay="100" role="form">
+        {% csrf_token %}
+        <div class="mx-auto">
+          <h3><strong style="color: black;">Measure a password strength & store it!</strong></h3><br>
+          <input type="password" name="password" id="password" placeholder="Try a password!" required size="50">
+          <br><input type="checkbox" onclick="show()">Show me
+          <meter max="4" id="password-strength-meter"></meter>
+          <p style="margin: 0em;" id="password-strength-text"></p>
+          <br><input type="submit" name="store" value="Store"> 
+        </div>
+    </form>
+  </div>
+</section>
+
+{% endblock %}

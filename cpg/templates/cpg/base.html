@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>{{ title }}</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="{% static 'cpg/css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'cpg/css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'cpg/css/aos.css' %}">
+     <link rel="stylesheet" href="{% static 'cpg/css/owl.carousel.min.css' %}">
+     <link rel="stylesheet" href="{% static 'cpg/css/owl.theme.default.min.css' %}">
+     <link rel="stylesheet" href="{% static 'cpg/css/pass_meter.css' %}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{% static 'cpg/css/templatemo-digital-trend.css' %}">
+
+</head>
+<body>
+
+     <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+              <i class="fa fa-line-chart"></i>
+              PassSafe
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="{% url 'contactpage' %}" class="nav-link smoothScroll">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                         <a href="#" class="nav-link smoothScroll">Login</a>
+                     </li>
+ 
+                    <li class="nav-item">
+                        <a href="#" class="nav-link contact">Sign up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+     <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+
+          <div  data-aos="fade-up" data-aos-delay="50">
+            <h4 class="my-4">Contact Info</h4>
+
+            <p class="mb-1">
+              <i class="fa fa-phone mr-2 footer-icon"></i> 
+              +201224056080
+            </p>
+
+            <p>
+               <i class="fa fa-envelope mr-2 footer-icon"></i>
+               osamamohammed3623@gmail.com
+            </p>
+
+            <small>Osama Muhammad &copy; 2021</small>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'cpg/js/jquery.min.js' %}"></script>
+     <script src="{% static 'cpg/js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'cpg/js/aos.js' %}"></script>
+     <script src="{% static 'cpg/js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'cpg/js/smoothscroll.js' %}"></script>
+     <script src="{% static 'cpg/js/custom.js' %}"></script>
+     <script src="{% static 'cpg/js/pass_meter.js' %}"></script>
+     <script src="{% static 'cpg/js/func_pass_meter.js' %}"></script>
+
+</body>
+</html>
