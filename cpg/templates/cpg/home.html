@@ -8,9 +8,13 @@
 
                         <div class="col-lg-6 col-md-10 col-12 d-flex flex-column justify-content-center align-items-center">
                               <div class="hero-text">
-
                                    <h1 class="text-white" data-aos="fade-up">All passwords, safe, in one place!</h1>
+
+                              {% if user.is_authenticated %}
+                                   <!-- Do nothing!-->
+                              {% else %}
                                    <a href="{% url 'register' %}" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Register now!</a>
+                              {% endif %}
 
                               </div>
                         </div>
