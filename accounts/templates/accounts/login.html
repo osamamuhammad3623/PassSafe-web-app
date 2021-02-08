@@ -1,0 +1,10 @@
+{% extends 'cpg/base.html' %}
+
+{% block content %}
+    <form method="POST" style="padding: 6em;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="login" value="Login" />
+        <br><small>not a member? <a href="{% url 'register' %}" >Register</a></small>
+    </form>
+{% endblock %}
