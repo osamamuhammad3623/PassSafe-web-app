@@ -20,19 +20,19 @@
     <br><br>
 
     {% if user_passwords %}
-        <table style="width: 80%;">
+        <table style="width: 80%;" data-aos="fade-up" data-aos-delay="50">
           <tr>
             <th style="padding: 1em;">Password</th>
           </tr>
           {% for password in user_passwords %}
           <tr>
             <th>{{ password }}</th>
-            <th> <a>Delete!</a></th>
+            <th> <a href="{% url 'delete' password.id %}">Delete!</a></th>
           </tr>
           {% endfor %}
         </table>
     {% else %}
-          <p>No saved passwords yet.</p>
+          <p data-aos="fade-up" data-aos-delay="50">No saved passwords yet.</p>
     {% endif %}
   
   </div>

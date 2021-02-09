@@ -17,7 +17,7 @@ def register(request):
 
 @login_required
 def profile(request):
-    user_passwords = models.passwords.objects.filter(id = request.user.id)
+    user_passwords = models.passwords.objects.filter(user_id = request.user.id)
     return render(request, 'accounts/profile.html', {'user_passwords': user_passwords })
 
 @login_required

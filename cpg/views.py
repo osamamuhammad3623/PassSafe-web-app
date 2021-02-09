@@ -22,3 +22,8 @@ def store_new(request):
         hashed_pass = models.passwords.encode_pass(new_pass)
         models.passwords.objects.create(hashed_password = hashed_pass, user = request.user)
     return redirect('profile')
+
+def delete(request, password_id):
+    target  = models.passwords.objects.filter(id = password_id)
+    target.delete()
+    return redirect('profile')
