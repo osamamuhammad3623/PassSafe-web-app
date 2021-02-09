@@ -3,10 +3,10 @@ from . import models
 
 
 def home(request):
-    return render(request, 'cpg/home.html', context={ 'title' : 'Home'})
+    return render(request, 'cpg/home.html')
 
 def contactpage(request):
-    return render(request, 'cpg/contact.html', context={ 'title' : 'Contact Us'})
+    return render(request, 'cpg/contact.html')
 
 def contact(request):
     new_name = request.POST.get('name')
@@ -17,4 +17,4 @@ def contact(request):
     return redirect('home')
 
 def profile(request):
-    return render(request, 'cpg/profile.html', context={ 'title' : 'Profile'})
+    return render(request, 'cpg/profile.html')
