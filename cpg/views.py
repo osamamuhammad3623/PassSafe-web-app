@@ -16,5 +16,9 @@ def contact(request):
     new_contact.save()
     return redirect('home')
 
-def profile(request):
-    return render(request, 'cpg/profile.html')
+def store_new(request):
+    if request.method == 'POST':
+        new_pass = request.POST.get('password')
+        hashed_pass = models.passwords.encode_pass(new_pass)
+        models.passwords.objects.create(hashed_password = hashed_pass, user = request.user)
+    return redirect('profile')

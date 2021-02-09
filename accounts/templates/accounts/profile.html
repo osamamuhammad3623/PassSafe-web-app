@@ -6,7 +6,7 @@
 <section style="padding: 6em;" >
   <div class="container">
     <div class="col-lg-8 mx-auto ">
-      <form action="#" method="POST" data-aos="fade-up" data-aos-delay="100" role="form">
+      <form action="{% url 'store_new' %}" method="POST" data-aos="fade-up" data-aos-delay="100" role="form">
         {% csrf_token %}
         <div class="mx-auto">
           <h3><strong style="color: black;">Measure a password strength & store it!</strong></h3><br>
@@ -17,7 +17,26 @@
           <br><input type="submit" name="store" value="Store"> 
         </div>
     </form>
+    <br><br>
+
+    {% if user_passwords %}
+        <table style="width: 80%;">
+          <tr>
+            <th style="padding: 1em;">Password</th>
+          </tr>
+          {% for password in user_passwords %}
+          <tr>
+            <th>{{ password }}</th>
+            <th> <a>Delete!</a></th>
+          </tr>
+          {% endfor %}
+        </table>
+    {% else %}
+          <p>No saved passwords yet.</p>
+    {% endif %}
+  
   </div>
+
 </section>
 
 {% endblock %}

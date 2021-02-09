@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout as auth_logout
-from django.contrib.auth.models import User
 from .forms import registerForm
+from cpg import models
 
 
 def register(request):
@@ -13,11 +13,12 @@ def register(request):
             return redirect('login')
     else:
         form = registerForm()
-    return render(request, 'accounts/register.html', {'title':'Register', 'form': form})
+    return render(request, 'accounts/register.html', {'form': form})
 
 @login_required
 def profile(request):
-    return render(request, 'accounts/profile.html',{'title':'Profile'} )
+    user_passwords = models.passwords.objects.filter(id = request.user.id)
+    return render(request, 'accounts/profile.html', {'user_passwords': user_passwords })
 
 @login_required
 def logout(request):

@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from accounts import views
+from accounts import views as accounts_views
+from cpg import views as cpg_views
 
 urlpatterns = [
     path('', include('cpg.urls')),
     path('admin/', admin.site.urls),
-    path('profile/', views.profile, name='profile'),
-    path('logout/', views.logout, name='logout'),
-    path('register/', views.register, name='register'),
+    path('profile/', accounts_views.profile, name='profile'),
+    path('store_new/', cpg_views.store_new, name='store_new'),
+    path('logout/', accounts_views.logout, name='logout'),
+    path('register/', accounts_views.register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name = 'accounts/login.html'), name= 'login'),
 ]
